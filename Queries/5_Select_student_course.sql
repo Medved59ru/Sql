@@ -1,0 +1,9 @@
+--Write SQL query that finds name of course and related students
+
+ USE FoxTaskDB
+ GO
+ 
+SELECT C.NAME, S.LAST_NAME
+FROM COURSES C, GROUPS G, STUDENTS S
+WHERE C.COURSE_ID = G.COURSE_ID AND S.GROUP_ID = G.GROUP_ID
+ORDER BY C.NAME

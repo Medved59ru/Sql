@@ -1,0 +1,9 @@
+--SQL query should find if any of the groups has less than 10 students.
+USE  FoxTaskDB
+GO
+
+SELECT G.NAME, COUNT(S.GROUP_ID) AS STUDENTS_NUMBER
+FROM STUDENTS S, GROUPS G
+WHERE S.GROUP_ID = G.GROUP_ID
+GROUP BY G.NAME
+HAVING COUNT(G.GROUP_ID) < 10
